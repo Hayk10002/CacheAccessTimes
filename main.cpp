@@ -4,6 +4,7 @@
 #include <chrono>
 #include <random>
 #include <format>
+#include <cassert>
 
 // Random number from 0 to max-1 inclusive
 int getRandomNum(int max)
@@ -23,13 +24,10 @@ auto time_ms(F f, int N)
     return std::chrono::high_resolution_clock::now() - start; 
 }
 
-int main() {
-    int N, M;
-    std::cout << "Enter step count: ";
-    std::cin >> N;
-    std::cout << "Enter iteration count: ";
-    std::cin >> M;
-    std::cout << std::endl;
+int main(int argc, char* argv[]) {
+    assert(argc == 3);
+    int N = std::stoi(argv[1]);
+    int M = std::stoi(argv[2]);
     int ARR_SIZE = 2048 * N;    
     std::vector<char> array(ARR_SIZE);
     for(int i = 0; i < ARR_SIZE; i++) array[i] = getRandomNum(1000);
