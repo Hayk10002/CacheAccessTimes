@@ -26,16 +26,15 @@ $ cmake -DCMAKE_BUILD_TYPE=Release -S . -B build
 
 # Build the project
 $ cmake --build build --config Release
-```
 
-Then, run the executable generated in the `build` directory.
+# Then, run the executable generated in the `build` directory with two number arguments.
+$ your/path/to/ex/main.exe {The number of steps in one iteration} {The number of iterations}
+# example - ...//main.exe 10000 1000
+```
 
 ## Possible Output
 
 ```
-Enter step count: 10000
-Enter iteration count: 1000
-
 Stride 1:     4902us  Average:      0ns
 Stride 2:     3472us  Average:      0ns
 Stride 4:     3356us  Average:      0ns
