@@ -25,7 +25,7 @@ auto time_ms(F f, int N)
 }
 
 int main(int argc, char* argv[]) {
-    assert(argc == 3);
+    if (argc != 3) { throw std::runtime_error("Invalid command line arguments. Correct usage: ./main N M"); }
     int N = std::stoi(argv[1]);
     int M = std::stoi(argv[2]);
     int ARR_SIZE = 2048 * N;    
